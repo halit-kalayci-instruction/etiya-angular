@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../services/post.service';
+import { LoadingService } from '../services/loading.service';
 
 @Component({
   selector: 'app-demo',
@@ -13,12 +14,19 @@ export class DemoComponent implements OnInit {
 
   count: number = 0;
 
-  constructor(private postService: PostService) {}
+  constructor(
+    private postService: PostService,
+    private loadingService: LoadingService
+  ) {}
 
   ngOnInit(): void {
     console.log('Merhaba');
     this.name = 'Halit'; // Classin içindeki bir değişkene işaret etmek için `this`
     this.postService.getAll().subscribe();
+
+    this.loadingService.isLoadingSubject.subscribe((value) => {
+      console.log('Loading değeri değişti yeni değer:', value);
+    });
   }
   // Component Life Cycle
 

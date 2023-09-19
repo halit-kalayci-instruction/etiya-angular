@@ -7,16 +7,18 @@ import {
   HttpResponse,
   HttpEventType,
 } from '@angular/common/http';
-import { Observable, catchError, tap } from 'rxjs';
+import { Observable, catchError, finalize, tap } from 'rxjs';
+import { LoadingService } from '../services/loading.service';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
-  constructor() {}
+  constructor(private loadingService: LoadingService) {}
 
   intercept(
     request: HttpRequest<unknown>,
     next: HttpHandler
   ): Observable<HttpEvent<unknown>> {
+    this.loadingService.startLoading();
     // Header kısmına token eklenmesi
     let newRequest = request.clone({
       setHeaders: {
@@ -35,6 +37,9 @@ export class AuthInterceptor implements HttpInterceptor {
         // işlem..
         console.log('Hatalı cevap alındı:', err);
         throw err;
+      }),
+      finalize(() => {
+        this.loadingService.stopLoading();
       })
     );
   }
