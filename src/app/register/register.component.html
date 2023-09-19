@@ -1,21 +1,17 @@
 <div class="d-flex justify-content-center align-items-center my-5">
-  <!-- <div class="form-group">
-    <label>E-mail</label>
-    <input class="form-control" />
-  </div> -->
-  <div>
-    <input type="text" [(ngModel)]="name" />
+  <form [formGroup]="registerForm">
+    <input type="text" formControlName="name" />
     <br />
-    <select [(ngModel)]="job">
-      <option value="programcı">Programcı</option>
-      <option value="analist">Analist</option>
-      <option value="test">Test</option>
+    <select formControlName="job">
+      <option value="0">Programcı</option>
+      <option value="1">Analist</option>
+      <option value="2">Test</option>
     </select>
     <br />
-    <input [(ngModel)]="acceptTerms" type="checkbox" />
+    <input formControlName="acceptTerms" type="checkbox" />
     <br />
     <br />
     <button (click)="submit()">Kayıt Ol</button>
-  </div>
+  </form>
 </div>
 <!-- JSON,XML -->
