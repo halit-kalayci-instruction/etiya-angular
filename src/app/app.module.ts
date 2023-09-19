@@ -8,8 +8,9 @@ import { DemoComponent } from './demo/demo.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { InputComponent } from './input/input.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './register/register.component';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,9 @@ import { RegisterComponent } from './register/register.component';
     HttpClientModule,
     ReactiveFormsModule,
   ], // Dış modüllerin import edilmesi.
-  providers: [], // DI
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+  ], // DI
   bootstrap: [AppComponent],
   exports: [ExampleComponent], // Declarations kısımındakilerden hangileri dışarıya açılacak?
 })

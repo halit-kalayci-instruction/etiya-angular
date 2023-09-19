@@ -10,6 +10,10 @@ import {
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css'],
 })
+// FormGroup'ın değişkenini oluşturuyoruz. Bkz: registerForm değişkeni.
+// İlgili formGroup'u Build ediyoruz. // Bkz: buildForm();
+// Build esnasında tanımalayabileceğimiz alanlar: başlangıç değeri, alan ismi, validatörler
+// HTML'deki elementler ile formgroupdaki control isimlerinin eşleştirilmesi.
 export class RegisterComponent implements OnInit {
   // Angularda => two way data binding => TS ve HTML dosyalarındaki verilerin eş zamanlı ilerlemesi
   registerForm!: FormGroup;
@@ -33,7 +37,16 @@ export class RegisterComponent implements OnInit {
     });
   }
 
+  hasValidationError(formControlName: string, errorName: string) {
+    let errors = this.registerForm.controls[formControlName].errors;
+
+    if (errors == null) return false;
+
+    return errors[errorName];
+  }
+
   submit() {
+    console.log(this.registerForm);
     if (this.registerForm.invalid) {
       alert('Hata var!');
     }
