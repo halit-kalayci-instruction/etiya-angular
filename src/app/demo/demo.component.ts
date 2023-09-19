@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PostService } from '../services/post.service';
 
 @Component({
   selector: 'app-demo',
@@ -12,9 +13,12 @@ export class DemoComponent implements OnInit {
 
   count: number = 0;
 
+  constructor(private postService: PostService) {}
+
   ngOnInit(): void {
     console.log('Merhaba');
     this.name = 'Halit'; // Classin içindeki bir değişkene işaret etmek için `this`
+    this.postService.getAll().subscribe();
   }
   // Component Life Cycle
 
