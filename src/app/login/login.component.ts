@@ -23,6 +23,19 @@ export class LoginComponent implements OnInit {
     this.createLoginForm();
   }
 
+  // getter-setter
+  get formControls() {
+    return this.formGroup.controls;
+  }
+
+  hasValidationError(formControlName: string, errorName: string) {
+    let errors = this.formControls[formControlName].errors;
+
+    if (errors == null) return false;
+
+    return errors[errorName];
+  }
+
   createLoginForm() {
     this.formGroup = this.formBuilder.group({
       username: new FormControl('', [
@@ -38,10 +51,11 @@ export class LoginComponent implements OnInit {
   }
 
   submit() {
+    this.formGroup.markAllAsTouched();
     if (this.formGroup.invalid) {
-      console.log(this.formGroup);
       return;
     }
     console.log(this.formGroup.value);
+    // HTTP isteği?
   }
 }
