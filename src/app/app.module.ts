@@ -11,6 +11,7 @@ import { InputComponent } from './input/input.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './register/register.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { LoadingComponent } from './loading/loading.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +20,7 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     LoginComponent,
     InputComponent,
     RegisterComponent,
+    LoadingComponent,
   ], // Bu modül hangi tanımlamaları yapıyor?
   imports: [
     BrowserModule,

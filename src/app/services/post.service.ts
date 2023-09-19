@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class PostService {
-  controllerUrl: string = environment.API_URL + 'p132osts/';
+  controllerUrl: string = environment.API_URL + 'posts/';
 
   constructor(private httpClient: HttpClient) {}
 
