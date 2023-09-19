@@ -7,6 +7,7 @@ import {
   FormControl,
   Validators,
 } from '@angular/forms';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   templateUrl: './login.component.html',
@@ -17,7 +18,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private postService: PostService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private authService: AuthService
   ) {}
   ngOnInit(): void {
     this.createLoginForm();
@@ -55,7 +57,8 @@ export class LoginComponent implements OnInit {
     if (this.formGroup.invalid) {
       return;
     }
-    console.log(this.formGroup.value);
-    // HTTP isteği?
+    this.authService.login(this.formGroup.value).subscribe((response) => {
+      console.log(response);
+    });
   }
 }
