@@ -9,6 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { InputComponent } from './input/input.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RegisterComponent } from './register/register.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
     DemoComponent,
     LoginComponent,
     InputComponent,
+    RegisterComponent,
   ], // Bu modül hangi tanımlamaları yapıyor?
   imports: [
     BrowserModule,
