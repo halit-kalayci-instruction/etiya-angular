@@ -8,6 +8,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   templateUrl: './login.component.html',
@@ -19,7 +20,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private postService: PostService,
     private formBuilder: FormBuilder,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) {}
   ngOnInit(): void {
     this.createLoginForm();
@@ -58,7 +60,8 @@ export class LoginComponent implements OnInit {
       return;
     }
     this.authService.login(this.formGroup.value).subscribe((response) => {
-      console.log(response);
+      localStorage.setItem('token', response.token);
+      this.router.navigateByUrl('/dashboard');
     });
   }
 }

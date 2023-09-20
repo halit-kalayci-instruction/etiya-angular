@@ -11,6 +11,8 @@ export class LoadingComponent implements OnInit {
 
   constructor(private loadingService: LoadingService) {}
   ngOnInit(): void {
+    // BehaviorSubject => Subscribe olunan anda veri akışı sağlar => Başlangıç değeri olduğu için.
+    // Subject => Başlangıç değeri yok, veri ilk değiştiği an subscribe metoduna veri akışı sağlar.
     this.loadingService.isLoadingSubject.subscribe((value) => {
       this.isLoading = value;
     });

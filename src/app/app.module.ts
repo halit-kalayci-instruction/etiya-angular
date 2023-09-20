@@ -12,6 +12,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './register/register.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { LoadingComponent } from './loading/loading.component';
+import { AuthGuard } from './guards/auth.guard';
 @NgModule({
   declarations: [
     AppComponent,
