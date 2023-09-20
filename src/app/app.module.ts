@@ -12,7 +12,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './register/register.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { LoadingComponent } from './loading/loading.component';
-import { AuthGuard } from './guards/auth.guard';
+import { JwtModule } from '@auth0/angular-jwt';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +29,13 @@ import { AuthGuard } from './guards/auth.guard';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: () => {
+          return localStorage.getItem('token');
+        },
+      },
+    }),
   ], // Dış modüllerin import edilmesi.
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },

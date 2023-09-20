@@ -4,13 +4,13 @@ import { ExampleComponent } from './example/example.component';
 import { DemoComponent } from './demo/demo.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { AuthGuard, authGuard } from './guards/auth.guard';
+import { authGuard } from './guards/auth.guard';
 
 // etiya.com/admin/x
 // etiya.com/admin/y
 
 const routes: Routes = [
-  { path: 'dashboard', component: ExampleComponent, canActivate: [AuthGuard] },
+  { path: 'dashboard', component: ExampleComponent, canActivate: [authGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: '', component: DemoComponent },
