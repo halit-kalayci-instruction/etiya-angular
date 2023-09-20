@@ -14,6 +14,7 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { LoadingComponent } from './loading/loading.component';
 import { JwtModule } from '@auth0/angular-jwt';
 import { ToastrModule } from 'ngx-toastr';
+import { HighlightDirective } from './directives/highlight.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +24,7 @@ import { ToastrModule } from 'ngx-toastr';
     InputComponent,
     RegisterComponent,
     LoadingComponent,
+    HighlightDirective,
   ], // Bu modül hangi tanımlamaları yapıyor?
   imports: [
     BrowserModule,

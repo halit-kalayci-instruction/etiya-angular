@@ -17,3 +17,6 @@ export const roleGuard: CanActivateFn = (route, state) => {
   router.navigateByUrl('/');
   return false;
 };
+
+// kminchelle
+// 0lelplR
