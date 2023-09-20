@@ -18,9 +18,12 @@ const routes: Routes = [
   }, // Sadece giriş yapmış olma koruması
   {
     path: 'dashboard',
-    component: ExampleComponent,
-    canActivate: [authGuard, roleGuard],
-    data: { roles: ['admin', 'moderator'] },
+    //component: ExampleComponent,
+    canActivate: [authGuard],
+    children: [
+      { path: '', component: ExampleComponent },
+      { path: 'products', component: DemoComponent, pathMatch: 'full' },
+    ],
   }, // Giriş yapmış olma ve istediğim rollere sahip olma koruması
   { path: 'login', component: LoginComponent }, // korumasız route
   { path: 'register', component: RegisterComponent },
