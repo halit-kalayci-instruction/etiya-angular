@@ -3,6 +3,8 @@ import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 @Directive({
   selector: '[appHighlight]',
 })
+// Behavorial Directive
+// Structural Directive
 export class HighlightDirective {
   @Input() appHighlight: string = 'red';
 

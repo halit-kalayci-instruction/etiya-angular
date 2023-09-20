@@ -15,6 +15,7 @@ export const authGuard: CanActivateFn = (route, state) => {
   // guardlar default olarak routing yapmazlar
   const router = inject(Router);
   const authService = inject(AuthService);
+
   if (authService.isAuthenticated()) {
     return true;
   }

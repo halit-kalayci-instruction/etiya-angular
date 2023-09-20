@@ -23,6 +23,8 @@ export class AuthService {
   }
 
   isAuthenticated(): boolean {
+    // JWT
+    // ??
     let token = localStorage.getItem('token');
     if (!token) return false;
     try {
@@ -36,7 +38,7 @@ export class AuthService {
 
   isAuthorized(roles: string[]): boolean {
     let decodedToken = this.jwtService.decodeToken();
-    console.log(decodedToken);
+    // Rol olmadığı için username kullanıldı.
     let anyMatch = roles.some((e) => e == decodedToken.username);
     return anyMatch;
   }

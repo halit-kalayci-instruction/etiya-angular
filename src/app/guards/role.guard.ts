@@ -9,10 +9,10 @@ export const roleGuard: CanActivateFn = (route, state) => {
   const toastr = inject(ToastrService);
 
   let requiredRoles = route.data['roles'] || []; // Sol taraf null ise sağ tarafı kullan.
+  // Typescript TIP => a || b  => a'nın değeri varsa a yoksa b değerine sahip olmak istiyorum.
 
   if (authService.isAuthorized(requiredRoles)) return true;
 
-  //TODO: Kullanıcıya yetkiniz yok mesajının gösterilmesi..
   toastr.warning('Bu sayfayı görüntülümek için yetkiniz bulunmamaktadır.');
   router.navigateByUrl('/');
   return false;
