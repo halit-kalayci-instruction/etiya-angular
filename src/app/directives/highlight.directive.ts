@@ -21,3 +21,5 @@ export class HighlightDirective {
     this.el.nativeElement.style.backgroundColor = 'transparent';
   }
 }
+
+// Elementlerimize verdiğimiz attributelar ile bu element referansları üzerinde işlemler uygulamak..

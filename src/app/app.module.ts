@@ -15,6 +15,7 @@ import { LoadingComponent } from './loading/loading.component';
 import { JwtModule } from '@auth0/angular-jwt';
 import { ToastrModule } from 'ngx-toastr';
 import { HighlightDirective } from './directives/highlight.directive';
+import { IfNotDirective } from './directives/if-not.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +26,7 @@ import { HighlightDirective } from './directives/highlight.directive';
     RegisterComponent,
     LoadingComponent,
     HighlightDirective,
+    IfNotDirective,
   ], // Bu modül hangi tanımlamaları yapıyor?
   imports: [
     BrowserModule,
