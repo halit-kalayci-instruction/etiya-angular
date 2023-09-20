@@ -13,6 +13,7 @@ import { RegisterComponent } from './register/register.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { LoadingComponent } from './loading/loading.component';
 import { JwtModule } from '@auth0/angular-jwt';
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +37,7 @@ import { JwtModule } from '@auth0/angular-jwt';
         },
       },
     }),
+    ToastrModule.forRoot(),
   ], // Dış modüllerin import edilmesi.
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },

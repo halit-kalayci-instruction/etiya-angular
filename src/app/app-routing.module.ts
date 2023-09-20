@@ -9,7 +9,7 @@ import { roleGuard } from './guards/role.guard';
 
 // etiya.com/admin/x
 // etiya.com/admin/y
-
+// 11:00
 const routes: Routes = [
   {
     path: 'admin',
@@ -20,7 +20,7 @@ const routes: Routes = [
     path: 'dashboard',
     component: ExampleComponent,
     canActivate: [authGuard, roleGuard],
-    data: { roles: ['admin', 'moderator', 'kminchelle'] },
+    data: { roles: ['admin', 'moderator'] },
   }, // Giriş yapmış olma ve istediğim rollere sahip olma koruması
   { path: 'login', component: LoginComponent }, // korumasız route
   { path: 'register', component: RegisterComponent },
