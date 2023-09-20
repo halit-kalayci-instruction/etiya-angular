@@ -25,8 +25,21 @@ export class AuthService {
   isAuthenticated(): boolean {
     let token = localStorage.getItem('token');
     if (!token) return false;
-    let expired = this.jwtService.isTokenExpired(token);
-    if (expired) return false;
+    try {
+      let expired = this.jwtService.isTokenExpired(token);
+      if (expired) return false;
+    } catch {
+      return false;
+    }
     return true;
   }
+
+  isAuthorized(roles: string[]): boolean {
+    let decodedToken = this.jwtService.decodeToken();
+    console.log(decodedToken);
+    let anyMatch = roles.some((e) => e == decodedToken.username);
+    return anyMatch;
+  }
 }
+
+// CTRL + P
