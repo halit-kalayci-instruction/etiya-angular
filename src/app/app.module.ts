@@ -19,6 +19,8 @@ import { ExampleComponent } from './components/example/example.component';
 import { DemoComponent } from './components/demo/demo.component';
 import { LoadingComponent } from './components/loading/loading.component';
 import { LayoutComponent } from './components/layout/layout.component';
+import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,6 +50,8 @@ import { LayoutComponent } from './components/layout/layout.component';
       },
     }),
     ToastrModule.forRoot(),
+    CoreModule,
+    SharedModule,
   ], // Dış modüllerin import edilmesi.
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
