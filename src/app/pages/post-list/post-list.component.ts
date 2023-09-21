@@ -9,6 +9,7 @@ import { PostService } from 'src/app/services/post.service';
 })
 export class PostListComponent implements OnInit {
   postList: PostForListingModel[] = [];
+  searchKey: string = '';
 
   // sayfa yüklendiğinde WEB API'den aldığımız cevabı postList değişkenine atayacağız.
 

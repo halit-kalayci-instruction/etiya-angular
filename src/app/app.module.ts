@@ -21,6 +21,9 @@ import { LoadingComponent } from './components/loading/loading.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
+import { ExamplePipe } from './pipes/example.pipe';
+import { KdvPipe } from './pipes/kdv.pipe';
+import { SearchPostPipe } from './pipes/search-post.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +38,9 @@ import { SharedModule } from './shared/shared.module';
     PostListComponent,
     PostDetailComponent,
     LayoutComponent,
+    ExamplePipe,
+    KdvPipe,
+    SearchPostPipe,
   ], // Bu modül hangi tanımlamaları yapıyor?
   imports: [
     BrowserModule,

@@ -15,6 +15,7 @@ import { PostService } from 'src/app/services/post.service';
 })
 export class LoginComponent implements OnInit {
   formGroup!: FormGroup;
+  today: Date = new Date();
 
   constructor(
     private postService: PostService,

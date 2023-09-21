@@ -1,11 +1,10 @@
 <div
   class="d-flex flex-column justify-content-center align-items-center h-100vh"
 >
-  <div *ngIfNot="false">
-    <p>123</p>
-    <br />
-    <a></a>
-  </div>
+  <!-- alt gr + T -->
+  <p>{{ today | date : "dd/MM/yyyy HH:mm" }}</p>
+  <p>{{ 100 | kdv }}</p>
+
   <form (submit)="submit()" [formGroup]="formGroup">
     <div class="form-group">
       <label [appHighlight]="'yellow'">Kullanıcı Adı</label>
