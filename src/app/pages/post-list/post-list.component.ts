@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { PostForListingModel } from '../models/postForListingModel';
-import { PostService } from '../services/post.service';
 import { Router } from '@angular/router';
+import { PostForListingModel } from 'src/app/models/postForListingModel';
+import { PostService } from 'src/app/services/post.service';
 
 @Component({
   templateUrl: './post-list.component.html',

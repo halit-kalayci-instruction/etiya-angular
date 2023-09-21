@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { PostService } from '../services/post.service';
+import { PostService } from '../../services/post.service';
 import { ActivatedRoute } from '@angular/router';
-import { PostForListingModel } from '../models/postForListingModel';
+import { PostForListingModel } from '../../models/postForListingModel';
 
 @Component({
   templateUrl: './post-detail.component.html',

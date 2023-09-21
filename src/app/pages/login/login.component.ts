@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { PostForListingModel } from '../models/postForListingModel';
-import { PostService } from '../services/post.service';
 import {
   FormGroup,
   FormBuilder,
   FormControl,
   Validators,
 } from '@angular/forms';
-import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
+import { PostService } from 'src/app/services/post.service';
 
 @Component({
   templateUrl: './login.component.html',

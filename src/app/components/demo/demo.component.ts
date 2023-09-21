@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PostService } from '../services/post.service';
-import { LoadingService } from '../services/loading.service';
+import { LoadingService } from 'src/app/services/loading.service';
+import { PostService } from 'src/app/services/post.service';
 
 @Component({
   selector: 'app-demo',
