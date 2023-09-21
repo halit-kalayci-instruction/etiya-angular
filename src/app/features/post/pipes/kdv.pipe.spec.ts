@@ -1,4 +1,4 @@
-import { KdvPipe } from './kdv.pipe';
+import { KdvPipe } from '../../../shared/pipes/kdv.pipe';
 
 describe('KdvPipe', () => {
   it('create an instance', () => {

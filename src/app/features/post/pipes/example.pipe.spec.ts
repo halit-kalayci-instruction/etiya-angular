@@ -1,4 +1,4 @@
-import { ExamplePipe } from './example.pipe';
+import { ExamplePipe } from '../../../shared/pipes/example.pipe';
 
 describe('ExamplePipe', () => {
   it('create an instance', () => {

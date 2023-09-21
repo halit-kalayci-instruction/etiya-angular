@@ -8,7 +8,7 @@ import {
   HttpEventType,
 } from '@angular/common/http';
 import { Observable, catchError, finalize, tap } from 'rxjs';
-import { LoadingService } from '../services/loading.service';
+import { LoadingService } from '../../shared/services/loading.service';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {

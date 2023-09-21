@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { LoginRequestModel } from '../models/loginRequestModel';
 import { Observable } from 'rxjs';
-import { LoginResponseModel } from '../models/loginResponseModel';
+import { LoginResponseModel } from '../../shared/models/loginResponseModel';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { LoginRequestModel } from 'src/app/shared/models/loginRequestModel';
 
 @Injectable({
   providedIn: 'root',

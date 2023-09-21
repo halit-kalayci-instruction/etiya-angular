@@ -6,8 +6,8 @@ import {
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/services/auth.service';
-import { PostService } from 'src/app/services/post.service';
+import { AuthService } from 'src/app/core/services/auth.service';
+import { PostService } from 'src/app/features/post/services/post.service';
 
 @Component({
   templateUrl: './login.component.html',
