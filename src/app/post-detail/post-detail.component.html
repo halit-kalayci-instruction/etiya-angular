@@ -12,5 +12,23 @@
       <p>Detail</p>
       <small>Footer Text</small>
     </ng-container>
+
+    <ng-container [ngSwitch]="post.userId">
+      <ng-template [ngSwitchCase]="1">
+        <p>User 1</p>
+      </ng-template>
+      <ng-template [ngSwitchCase]="2">
+        <p>User 2</p>
+      </ng-template>
+      <ng-template [ngSwitchCase]="3">
+        <p>User 3</p>
+      </ng-template>
+      <ng-template [ngSwitchCase]="4">
+        <p>User 4</p>
+      </ng-template>
+      <ng-template [ngSwitchCase]="5">
+        <p>User 5</p>
+      </ng-template>
+    </ng-container>
   </div>
 </app-layout>
