@@ -1,9 +1,20 @@
-<div class="d-flex justify-content-center align-items-center py-5">
-  <ul>
-    <li *ngFor="let post of postList">
-      <a routerLink="/posts/detail" [queryParams]="{ id: post.id }">
+<app-layout>
+  <div
+    class="d-flex justify-content-center align-items-center py-5 flex-column"
+  >
+    <ng-template #noResult>
+      <p>Hiç bir sonuç bulunamadı..</p>
+    </ng-template>
+    <ul *ngIf="postList.length > 0; else noResult">
+      <li *ngFor="let post of postList">
+        <!-- <a (click)="navigateToDetail(post.id)">
         {{ post.title }}
-      </a>
-    </li>
-  </ul>
-</div>
+      </a> -->
+        <a routerLink="/posts/detail" [queryParams]="{ id: post.id }">
+          {{ post.title }}
+        </a>
+      </li>
+    </ul>
+  </div>
+</app-layout>
+<!-- 11:00 -->

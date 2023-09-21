@@ -1,6 +1,16 @@
-<div class="d-flex justify-content-center align-items-center flex-column">
-  <div>Id</div>
-  <div>User Id</div>
-  <div>Title</div>
-  <div>Body</div>
-</div>
+<app-layout>
+  <div class="d-flex justify-content-center align-items-center flex-column">
+    <a routerLink="/posts/list">Listeye Dön</a>
+    <div>{{ post.id }}</div>
+    <div>{{ post.userId }}</div>
+    <div>{{ post.title }}</div>
+    <div>{{ post.body }}</div>
+
+    <!-- ng-container => html'de yer kaplamayan ama kodlarda belirli bir element grubunu sarmallayabildiğimiz yapı -->
+    <ng-container *ngIf="false">
+      <h3>Title</h3>
+      <p>Detail</p>
+      <small>Footer Text</small>
+    </ng-container>
+  </div>
+</app-layout>

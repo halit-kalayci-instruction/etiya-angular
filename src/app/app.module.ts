@@ -18,6 +18,7 @@ import { HighlightDirective } from './directives/highlight.directive';
 import { IfNotDirective } from './directives/if-not.directive';
 import { PostListComponent } from './post-list/post-list.component';
 import { PostDetailComponent } from './post-detail/post-detail.component';
+import { LayoutComponent } from './layout/layout.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +32,7 @@ import { PostDetailComponent } from './post-detail/post-detail.component';
     IfNotDirective,
     PostListComponent,
     PostDetailComponent,
+    LayoutComponent,
   ], // Bu modül hangi tanımlamaları yapıyor?
   imports: [
     BrowserModule,
