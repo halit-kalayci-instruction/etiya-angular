@@ -16,6 +16,8 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { ToastrModule } from 'ngx-toastr';
 import { HighlightDirective } from './directives/highlight.directive';
 import { IfNotDirective } from './directives/if-not.directive';
+import { PostListComponent } from './post-list/post-list.component';
+import { PostDetailComponent } from './post-detail/post-detail.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +29,8 @@ import { IfNotDirective } from './directives/if-not.directive';
     LoadingComponent,
     HighlightDirective,
     IfNotDirective,
+    PostListComponent,
+    PostDetailComponent,
   ], // Bu modül hangi tanımlamaları yapıyor?
   imports: [
     BrowserModule,

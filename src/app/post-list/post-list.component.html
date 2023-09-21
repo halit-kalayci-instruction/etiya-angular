@@ -1,0 +1,9 @@
+<div class="d-flex justify-content-center align-items-center py-5">
+  <ul>
+    <li *ngFor="let post of postList">
+      <a routerLink="/posts/detail" [queryParams]="{ id: post.id }">
+        {{ post.title }}
+      </a>
+    </li>
+  </ul>
+</div>
