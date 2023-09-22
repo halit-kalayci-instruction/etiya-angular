@@ -1,3 +1,4 @@
+import { StoreModule } from '@ngrx/store';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -14,6 +15,7 @@ import { ExamplePipe } from './pipes/example.pipe';
 import { KdvPipe } from './pipes/kdv.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
+import { sharedReducers } from './store/shared.reducers';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,7 @@ import { TranslateModule } from '@ngx-translate/core';
     FormsModule,
     ReactiveFormsModule,
     TranslateModule,
+    StoreModule.forRoot(sharedReducers),
   ],
   exports: [
     InputComponent,
