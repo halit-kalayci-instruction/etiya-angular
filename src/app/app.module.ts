@@ -1,5 +1,5 @@
 import { StoreModule } from '@ngrx/store';
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -25,6 +25,7 @@ import { InputComponent } from './shared/components/input/input.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { sharedReducers } from './shared/store/shared.reducers';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 @NgModule({
   declarations: [AppComponent], // Bu modül hangi tanımlamaları yapıyor?
   imports: [
@@ -55,6 +56,7 @@ import { sharedReducers } from './shared/store/shared.reducers';
       },
     }),
     StoreModule.forRoot(sharedReducers),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
   ], // Dış modüllerin import edilmesi.
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
