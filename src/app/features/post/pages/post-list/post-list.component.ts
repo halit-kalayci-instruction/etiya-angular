@@ -1,8 +1,10 @@
+import { Store } from '@ngrx/store';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { PostForListingModel } from 'src/app/features/post/models/postForListingModel';
 import { PostService } from 'src/app/features/post/services/post.service';
+import { SharedState } from 'src/app/shared/store/shared.reducers';
 
 @Component({
   templateUrl: './post-list.component.html',
@@ -17,7 +19,8 @@ export class PostListComponent implements OnInit {
   constructor(
     private postService: PostService,
     private router: Router,
-    private translateService: TranslateService
+    private translateService: TranslateService,
+    private store: Store<SharedState>
   ) {}
   ngOnInit(): void {
     this.fetchPosts();
@@ -25,6 +28,8 @@ export class PostListComponent implements OnInit {
     this.translateService.get('helloText').subscribe((translate) => {
       console.log('Typescript tarafından alınan çeviri:', translate);
     });
+
+    this.store.select((i) => i.auth).subscribe((state) => console.log(state));
   }
   fetchPosts() {
     this.postService.getAll().subscribe((response) => {

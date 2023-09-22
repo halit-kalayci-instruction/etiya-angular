@@ -1,7 +1,7 @@
 import { createReducer, on } from '@ngrx/store';
 import { login } from './auth.actions';
 
-const initialState = { isAuthenticated: false };
+const initialState = { isAuthenticated: false, user: {} };
 
 export const authReducer = createReducer(
   initialState,
