@@ -4,7 +4,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import {
+  HTTP_INTERCEPTORS,
+  HttpClient,
+  HttpClientModule,
+} from '@angular/common/http';
 import { AuthInterceptor } from './core/interceptors/auth.interceptor';
 import { JwtModule } from '@auth0/angular-jwt';
 import { ToastrModule } from 'ngx-toastr';
@@ -17,6 +21,8 @@ import { SearchPostPipe } from './features/post/pipes/search-post.pipe';
 import { LoadingComponent } from './shared/components/loading/loading.component';
 import { LayoutComponent } from './shared/components/layout/layout.component';
 import { InputComponent } from './shared/components/input/input.component';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 @NgModule({
   declarations: [AppComponent], // Bu modül hangi tanımlamaları yapıyor?
   imports: [
@@ -35,6 +41,17 @@ import { InputComponent } from './shared/components/input/input.component';
     ToastrModule.forRoot(),
     CoreModule,
     SharedModule,
+    TranslateModule.forRoot({
+      defaultLanguage: 'tr',
+      useDefaultLang: true,
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (httpClient: HttpClient) => {
+          return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
+        },
+        deps: [HttpClient], // dependencies
+      },
+    }),
   ], // Dış modüllerin import edilmesi.
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },

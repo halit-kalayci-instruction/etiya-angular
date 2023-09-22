@@ -11,3 +11,6 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'etiya-angular-starter';
 }
+
+// Internationalization => Çoklu dil özelliği
+// NgRx (State Management)
