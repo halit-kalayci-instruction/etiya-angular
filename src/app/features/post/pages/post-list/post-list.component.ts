@@ -5,6 +5,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { PostForListingModel } from 'src/app/features/post/models/postForListingModel';
 import { PostService } from 'src/app/features/post/services/post.service';
 import { SharedState } from 'src/app/shared/store/shared.reducers';
+import { login } from 'src/app/shared/store/auth/auth.actions';
 
 @Component({
   templateUrl: './post-list.component.html',
@@ -31,6 +32,23 @@ export class PostListComponent implements OnInit {
 
     this.store.select((i) => i.auth).subscribe((state) => console.log(state));
   }
+
+  changeStore() {
+    // ngrx aksiyonu tetiklemek
+    this.store.dispatch(
+      login({
+        id: 1,
+        email: '',
+        firstName: 'halit',
+        lastName: 'enes',
+        image: '',
+        gender: 'male',
+        token: '',
+        username: '',
+      })
+    );
+  }
+
   fetchPosts() {
     this.postService.getAll().subscribe((response) => {
       this.postList = response;
