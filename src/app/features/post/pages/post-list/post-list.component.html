@@ -6,6 +6,8 @@
       <p>Hiç bir sonuç bulunamadı..</p>
     </ng-template>
 
+    <p>{{ "helloText" | translate }}</p>
+
     <input [(ngModel)]="searchKey" class="form-control" placeholder="Ara.." />
 
     <ul *ngIf="postList.length > 0; else noResult">

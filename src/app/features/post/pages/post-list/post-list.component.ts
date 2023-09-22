@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import { PostForListingModel } from 'src/app/features/post/models/postForListingModel';
 import { PostService } from 'src/app/features/post/services/post.service';
 
@@ -13,9 +14,17 @@ export class PostListComponent implements OnInit {
 
   // sayfa yüklendiğinde WEB API'den aldığımız cevabı postList değişkenine atayacağız.
 
-  constructor(private postService: PostService, private router: Router) {}
+  constructor(
+    private postService: PostService,
+    private router: Router,
+    private translateService: TranslateService
+  ) {}
   ngOnInit(): void {
     this.fetchPosts();
+
+    this.translateService.get('helloText').subscribe((translate) => {
+      console.log('Typescript tarafından alınan çeviri:', translate);
+    });
   }
   fetchPosts() {
     this.postService.getAll().subscribe((response) => {

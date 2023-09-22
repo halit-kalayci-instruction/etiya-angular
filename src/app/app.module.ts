@@ -42,7 +42,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
     CoreModule,
     SharedModule,
     TranslateModule.forRoot({
-      defaultLanguage: 'tr',
+      defaultLanguage: 'en',
       useDefaultLang: true,
       loader: {
         provide: TranslateLoader,

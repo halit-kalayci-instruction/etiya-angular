@@ -7,6 +7,7 @@ import { PostDetailComponent } from './pages/post-detail/post-detail.component';
 import { SearchPostPipe } from './pipes/search-post.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [PostListComponent, PostDetailComponent, SearchPostPipe],
@@ -16,6 +17,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
     FormsModule,
     ReactiveFormsModule,
     SharedModule,
+    TranslateModule,
   ],
 })
 export class PostModule {}
