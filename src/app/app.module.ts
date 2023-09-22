@@ -1,3 +1,4 @@
+import { StoreModule } from '@ngrx/store';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -23,6 +24,7 @@ import { LayoutComponent } from './shared/components/layout/layout.component';
 import { InputComponent } from './shared/components/input/input.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { sharedReducers } from './shared/store/shared.reducers';
 @NgModule({
   declarations: [AppComponent], // Bu modül hangi tanımlamaları yapıyor?
   imports: [
@@ -52,6 +54,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
         deps: [HttpClient], // dependencies
       },
     }),
+    StoreModule.forRoot(sharedReducers),
   ], // Dış modüllerin import edilmesi.
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },

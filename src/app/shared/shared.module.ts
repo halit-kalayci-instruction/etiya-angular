@@ -36,7 +36,6 @@ import { sharedReducers } from './store/shared.reducers';
     FormsModule,
     ReactiveFormsModule,
     TranslateModule,
-    StoreModule.forRoot(sharedReducers),
   ],
   exports: [
     InputComponent,
