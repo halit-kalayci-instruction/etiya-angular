@@ -24,6 +24,12 @@
           <a class="nav-link disabled" aria-disabled="true">Disabled</a>
         </li>
       </ul>
+      <div class="mx-2">
+        <select (change)="onLngChange($event)" class="form-select">
+          <option [selected]="selectedLng == 'tr'" value="tr">TR</option>
+          <option [selected]="selectedLng == 'en'" value="en">EN</option>
+        </select>
+      </div>
       <form class="d-flex" role="search">
         <input
           class="form-control me-2"

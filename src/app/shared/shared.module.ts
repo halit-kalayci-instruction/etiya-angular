@@ -13,6 +13,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { ExamplePipe } from './pipes/example.pipe';
 import { KdvPipe } from './pipes/kdv.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SharedRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    TranslateModule,
   ],
   exports: [
     InputComponent,
